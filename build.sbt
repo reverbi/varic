@@ -13,5 +13,6 @@ libraryDependencies ++= Seq(
   ws,
   "org.webjars" % "bootstrap" % "3.3.1",
   "org.webjars" % "angularjs" % "1.3.15",
-  "org.webjars" % "angular-ui-bootstrap" % "0.12.0"
+  "org.webjars" % "angular-ui-bootstrap" % "0.12.0",
+  "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )

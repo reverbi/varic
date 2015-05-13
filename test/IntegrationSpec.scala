@@ -5,6 +5,8 @@ import org.junit.runner._
 import play.api.test._
 import play.api.test.Helpers._
 
+import org.openqa.selenium.phantomjs.PhantomJSDriver
+
 /**
  * add your integration spec here.
  * An integration test will fire up a whole play application in a real (or headless) browser
@@ -14,11 +16,11 @@ class IntegrationSpec extends Specification {
 
   "Application" should {
 
-    "work from within a browser" in new WithBrowser {
+    "work from within a browser" in new WithBrowser(webDriver = WebDriverFactory(classOf[PhantomJSDriver])) {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Your new application is ready.")
+      browser.pageSource must contain("Nothing here yet!")
     }
   }
 }
