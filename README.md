@@ -4,11 +4,10 @@ Varic
 Web application with user driven media.
 
 
-Development Environment Setup
------------------------------
+Local Development Environment Setup
+-----------------------------------
 
 Install the following:
-  * Heroku toolbelt (for deploying to Heroku)
   * PhantomJS (for testing)
   * coffeelint (for linting coffeescript)
 

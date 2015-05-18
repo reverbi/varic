@@ -20,7 +20,7 @@ class IntegrationSpec extends Specification {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Nothing here yet!")
+      browser.pageSource must contain("Nothing(?) here yet!")
     }
   }
 }
