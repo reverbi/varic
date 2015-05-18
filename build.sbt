@@ -17,6 +17,8 @@ libraryDependencies ++= Seq(
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
 
+addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle")
+
 ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := "<empty>;.*Reverse.*;views.*"
 
 ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
@@ -24,3 +26,7 @@ ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
 ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := true
 
 ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := false
+
+scalastyleConfig := file("linters/scalastyle/scalastyle-config.xml")
+
+scalastyleFailOnError := true
