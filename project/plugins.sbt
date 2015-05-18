@@ -19,3 +19,6 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-mocha" % "1.0.0")
 
 // Needed for heroku
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.7.4")
+
+// scoverage for code coverage
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.1.0")

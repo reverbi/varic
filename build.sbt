@@ -16,3 +16,11 @@ libraryDependencies ++= Seq(
   "org.webjars" % "angular-ui-bootstrap" % "0.12.0",
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
+
+ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := "<empty>;.*Reverse.*;views.*"
+
+ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
+
+ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := true
+
+ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := false
