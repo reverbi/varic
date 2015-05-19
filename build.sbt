@@ -17,7 +17,17 @@ libraryDependencies ++= Seq(
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
 
-addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle")
+lazy val coffeelint = taskKey[Unit]("CoffeeLint")
+
+coffeelint := {
+  val sourceDir = (sourceDirectory in Assets).value
+  val result = Seq("coffeelint", sourceDir.getAbsolutePath).!
+  if (result != 0) {
+    throw new Exception("coffeelint detected errors")
+  }
+}
+
+addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle;coffeelint")
 
 ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := "<empty>;.*Reverse.*;views.*"
 
