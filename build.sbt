@@ -17,6 +17,8 @@ libraryDependencies ++= Seq(
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
 
+// coffeelint
+
 lazy val coffeelint = taskKey[Unit]("CoffeeLint")
 
 coffeelint := {
@@ -27,7 +29,10 @@ coffeelint := {
   }
 }
 
+// Alias for running tests, coverage and style check
 addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle;coffeelint")
+
+// scoverage settings
 
 ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := "<empty>;.*Reverse.*;views.*"
 
@@ -36,6 +41,8 @@ ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
 ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := true
 
 ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := false
+
+// scalastyle settings
 
 scalastyleConfig := file("linters/scalastyle/scalastyle-config.xml")
 
