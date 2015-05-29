@@ -17,20 +17,8 @@ libraryDependencies ++= Seq(
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
 
-// coffeelint
-
-lazy val coffeelint = taskKey[Unit]("CoffeeLint")
-
-coffeelint := {
-  val sourceDir = (sourceDirectory in Assets).value
-  val result = Seq("coffeelint", sourceDir.getAbsolutePath).!
-  if (result != 0) {
-    throw new Exception("coffeelint detected errors")
-  }
-}
-
 // Alias for running tests, coverage and style check
-addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle;coffeelint")
+addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle")
 
 // scoverage settings
 

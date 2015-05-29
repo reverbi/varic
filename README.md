@@ -9,4 +9,3 @@ Local Development Environment Setup
 
 Install the following:
   * PhantomJS (for testing)
-  * coffeelint (for linting coffeescript)
