@@ -2,7 +2,11 @@ name := """varic"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
+  // Ensure that the very old webjar npm is not run
+  JsEngineKeys.npmNodeModules in Assets := Nil,
+  JsEngineKeys.npmNodeModules in TestAssets := Nil
+)
 
 scalaVersion := "2.11.1"
 

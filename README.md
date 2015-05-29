@@ -8,4 +8,5 @@ Local Development Environment Setup
 -----------------------------------
 
 Install the following:
-  * PhantomJS (for testing)
+  * PhantomJS (for integration testing)
+  * Node.js and npm (for front end testing)
