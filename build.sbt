@@ -21,6 +21,9 @@ libraryDependencies ++= Seq(
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
 
+// Heroku deployment
+herokuAppName in Compile := "varic"
+
 // Alias for running tests, coverage and style check
 addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle")
 

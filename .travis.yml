@@ -4,12 +4,7 @@ scala:
 jdk:
   - oraclejdk8
 script: "sbt ++$TRAVIS_SCALA_VERSION full-test"
-deploy:
-  provider: heroku
-  api_key:
-    secure: mA77Ii8F5QA5kNZAOYCyzy6Zbm2es1lIWDhatysjpPl36lAsADZfIgfS8yS19QbfaDbAhSpyTTHLTcYJ9WXCmAt5csa+IhILB19YP1NFHgve3gC4F6JVvsuRyEA5Xjmw9jH6u8p8a7/njjkZXJFPAmX4lylLL6OI6A+1+zjuTZ1E4BUJW+2p9Ma1lhcXX6dn+JSfaBIq7O5GL3Wi1mX0vZUkoxD0bIIc4CJW2sRDQucl4/+9RevyD/YWLTG2LylVZdK/q9PalOoy+cFYCcfXEHcLqGzwS6AR5lPcw6X/Oho+ijk96gsOwU9St5lmxCmoQE0adYYdr2WHnkVrxiEEge7hBjPNoPI1cb1BbuVTYqwv9jR5jVRybx1Z+0nUk5f7jpa/T8rDDolChRs2BXYkgeTCoj+vEfJ2YYug0z8PgqjHvZyknxxWHgjFwLcMAR7dc0+0BVFTi4R1bajgCS+irP7cnHVOr0i3Wy2y+9Re9jGajGnIAMyv2dy+IABL3SbBj9qP3ozgFLYcXXJY+CD3v7ZTyLe+NBUPxTOUY38nItv1qgkA/NMxccD8xzRb8ORMK20YlqiMpeSGcK/4FwqM44oS2jL1YOGDO1qbFWdr8LukBH3j86gK1VvM4YYslg/VwWDt3xBwb2Ald1lCurdX9dNk+oyBF4Dh2ls7FG2AbaI=
-  app: varic
-  skip_cleanup: true
-  on:
-    branch: master
-    repo: reverbi/varic
+after_success: "sbt deployHeroku"
+env:
+  global:
+    - secure: mA77Ii8F5QA5kNZAOYCyzy6Zbm2es1lIWDhatysjpPl36lAsADZfIgfS8yS19QbfaDbAhSpyTTHLTcYJ9WXCmAt5csa+IhILB19YP1NFHgve3gC4F6JVvsuRyEA5Xjmw9jH6u8p8a7/njjkZXJFPAmX4lylLL6OI6A+1+zjuTZ1E4BUJW+2p9Ma1lhcXX6dn+JSfaBIq7O5GL3Wi1mX0vZUkoxD0bIIc4CJW2sRDQucl4/+9RevyD/YWLTG2LylVZdK/q9PalOoy+cFYCcfXEHcLqGzwS6AR5lPcw6X/Oho+ijk96gsOwU9St5lmxCmoQE0adYYdr2WHnkVrxiEEge7hBjPNoPI1cb1BbuVTYqwv9jR5jVRybx1Z+0nUk5f7jpa/T8rDDolChRs2BXYkgeTCoj+vEfJ2YYug0z8PgqjHvZyknxxWHgjFwLcMAR7dc0+0BVFTi4R1bajgCS+irP7cnHVOr0i3Wy2y+9Re9jGajGnIAMyv2dy+IABL3SbBj9qP3ozgFLYcXXJY+CD3v7ZTyLe+NBUPxTOUY38nItv1qgkA/NMxccD8xzRb8ORMK20YlqiMpeSGcK/4FwqM44oS2jL1YOGDO1qbFWdr8LukBH3j86gK1VvM4YYslg/VwWDt3xBwb2Ald1lCurdX9dNk+oyBF4Dh2ls7FG2AbaI=
