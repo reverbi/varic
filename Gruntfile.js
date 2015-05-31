@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jasmine: {
-      runSpecs: {
+      specsAndCoverage: {
         src: 'public/javascripts/*.js',
         options: {
           specs: 'test/js/specs/**/*.spec.js',
@@ -16,7 +16,28 @@ module.exports = function(grunt) {
             'node_modules/angular-route/angular-route.js',
             'node_modules/angular-mocks/angular-mocks.js'
           ],
-          summary: true
+          summary: true,
+          template: require('grunt-template-jasmine-istanbul'),
+          templateOptions: {
+            coverage: 'grunt-coverage/coverage.json',
+            report: [
+              {
+                type: 'text'
+              },
+              {
+                type: 'html',
+                options: {
+                  dir: 'grunt-coverage/html'
+                }
+              }
+            ],
+            thresholds: {
+              lines: 70,
+              statements: 70,
+              branches: 70,
+              functions: 80
+            }
+          }
         }
       }
     }
