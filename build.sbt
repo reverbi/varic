@@ -1,3 +1,7 @@
+// Grunt plugin specific imports
+import org.rbayer.GruntSbtPlugin._
+import GruntKeys._
+
 name := """varic"""
 
 version := "1.0-SNAPSHOT"
@@ -20,6 +24,9 @@ libraryDependencies ++= Seq(
   "org.webjars" % "angular-ui-bootstrap" % "0.12.0",
   "com.github.detro.ghostdriver" % "phantomjsdriver" % "1.0.4" % "test"
 )
+
+// Init grunt plugin settings with defaults
+gruntSettings
 
 // Heroku deployment
 herokuAppName in Compile := "varic"

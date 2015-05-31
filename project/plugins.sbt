@@ -17,6 +17,9 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.0.0")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-mocha" % "1.0.0")
 
+// Grunt plugin
+addSbtPlugin("org.rbayer" % "grunt-sbt" % "1.0")
+
 // Needed for heroku
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.7.4")
