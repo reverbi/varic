@@ -4,7 +4,7 @@ scala:
 jdk:
   - oraclejdk8
 script: "sbt ++$TRAVIS_SCALA_VERSION stage full-test"
-after_success: "sbt ++$TRAVIS_SCALA_VERSION stage deployHeroku"
+after_success: ./scripts/travis-depl-script.sh
 env:
   global:
     secure: FGmh9l+fS0hw3tf/pjWNpAGUntphrq4I3qGai9WltsDm+kfS/rWAJIf70UrPTBBYTqSVmLlKpYjwt0Vr7ZVnTHI3+UE5Mu+Z44VQXXJuSJvJ3jAJtOWzZ7u66PX1/fmOjv4nrXZestpBYeu7ENB5YDTfqIBgLdoTvIN+8lM0NLITx4NficbdPpOKo3XNYQdodydLJciV8qf9b2MYP/SvNXhUNvapy7/ue/56y2+axQFI8RlbblO3pXaMgkR1YJ1I6qbTufXUhoW0jiLLhf7ItXB43TeZdlxt1vAj2dOAKJFiiiazsF+FyJzJvlJMktz0NTovstol0wCTZkbhIm0FFjG0BqdcWgy5FbBV0L0+7zFPLzUMB1icRo94e1CRhnhSmNDWpEpds/89vYgXJEUZViActZTi87S6EBFkKB5GKNxrPjjHBOArN5moUZWwg7R1nH7O56E2q/R5Reh+DqqnpddRqyQD4pYOOxotbJwGmKFI/4cSSZ7wrmzT1PrRGF0IQZUJrfuo/J2kBzZGa/JVie44CF8OCCVvjGBGHi+oJxtkAKvJxo9B0kZgoBXHAO0nDoDGJ06XF24AYxjHGr86HUev0mLn/thUl9hziW/FTa4PwnLk5MvJTBPMDypxx0T9XJGICbtDjvrv/i4sdf7BknSfPtZ5nEXSjZ8tBp6uswA=
