@@ -22,6 +22,6 @@ module.exports = function(grunt) {
     }
   });
 
-  // Default task(s).
-  //grunt.registerTask('default', ['task_name']);
+  grunt.registerTask('build', function() {});  // Empty for now
+  grunt.registerTask('test', ['jasmine']);
 };
