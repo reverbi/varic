@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Coverage reporting
-sbt coveralls
+sbt stage coveralls
 
 # Deployment to Heroku
 if [ "$TRAVIS_BRANCH" = "master" ]; then
