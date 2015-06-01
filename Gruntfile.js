@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.initConfig({
     jasmine: {
@@ -40,10 +41,13 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+    jshint: {
+      all: ['Gruntfile.js', 'public/javascripts/**/*.js', 'test/js/**/*.js']
     }
   });
 
   grunt.registerTask('build', function() {});  // Empty for now
-  grunt.registerTask('test', ['jasmine']);
+  grunt.registerTask('test', ['jasmine', 'jshint']);
   grunt.registerTask('default', ['test']);
 };
