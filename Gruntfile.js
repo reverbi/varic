@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-coveralls');
 
   grunt.initConfig({
     jasmine: {
@@ -30,6 +31,12 @@ module.exports = function(grunt) {
                 options: {
                   dir: 'grunt-coverage/html'
                 }
+              },
+              {
+                type: 'lcovonly',
+                options: {
+                  dir: 'grunt-coverage/lcov'
+                }
               }
             ],
             thresholds: {
@@ -44,7 +51,16 @@ module.exports = function(grunt) {
     },
     jshint: {
       all: ['Gruntfile.js', 'public/javascripts/**/*.js', 'test/js/**/*.js']
-    }
+    },
+    coveralls: {
+      options: {
+        force: false
+      },
+      coverReport: {
+        src: 'grunt-coverage/lcov/lcov.info',
+        options: {}
+      },
+    },
   });
 
   grunt.registerTask('build', function() {});  // Empty for now

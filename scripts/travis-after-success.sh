@@ -2,6 +2,7 @@
 
 # Coverage reporting
 sbt stage coveralls
+grunt coveralls
 
 # Deployment to Heroku
 if [ "$TRAVIS_BRANCH" = "master" ]; then
