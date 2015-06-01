@@ -1,5 +1,7 @@
 resolvers += "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/"
 
+resolvers += Classpaths.sbtPluginReleases
+
 // The Play plugin
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.3.8")
 
@@ -28,6 +30,9 @@ addSbtPlugin("com.heroku" % "sbt-heroku" % "0.4.1")
 
 // scoverage for code coverage
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.1.0")
+
+// coveralls plugin
+addSbtPlugin("org.scoverage" % "sbt-coveralls" % "1.0.0")
 
 // scalastyle for scala style checking
 
