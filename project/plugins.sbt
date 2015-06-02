@@ -28,11 +28,8 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.7.4")
 
 addSbtPlugin("com.heroku" % "sbt-heroku" % "0.4.1")
 
-// scoverage for code coverage (must be 1.0.4 for sbt-coveralls 1.0.0 to work)
-addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.0.4")
-
-// coveralls plugin
-addSbtPlugin("org.scoverage" % "sbt-coveralls" % "1.0.0")
+// scoverage for code coverage
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.1.0")
 
 // scalastyle for scala style checking
 
