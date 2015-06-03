@@ -12,7 +12,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
   JsEngineKeys.npmNodeModules in TestAssets := Nil
 )
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.2"
 
 libraryDependencies ++= Seq(
   jdbc,
@@ -36,13 +36,11 @@ addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle")
 
 // scoverage settings
 
-ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := "<empty>;.*Reverse.*;views.*"
+ScoverageSbtPlugin.ScoverageKeys.coverageExcludedPackages := ".*Routes.*;.*Reverse.*"
 
 ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
 
 ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := true
-
-ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := false
 
 // scalastyle settings
 
