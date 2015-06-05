@@ -17,3 +17,4 @@ dist
 node_modules
 bower_components
 grunt-coverage
+public/javascripts/*
