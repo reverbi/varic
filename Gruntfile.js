@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build', function() {});  // Empty for now
+  grunt.registerTask('build', ['concat']);
   grunt.registerTask('test', ['jshint', 'jasmine']);
   grunt.registerTask('default', ['test']);
 };

@@ -29,7 +29,7 @@ gruntSettings
 herokuAppName in Compile := "varic"
 
 // Alias for running tests, coverage and style check
-addCommandAlias("full-test", ";clean;coverage;test;scalastyle;test:scalastyle")
+addCommandAlias("full-test", ";clean;resources;coverage;test;scalastyle;test:scalastyle")
 
 // scoverage settings
 
