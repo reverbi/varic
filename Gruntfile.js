@@ -13,9 +13,10 @@ module.exports = function(grunt) {
         options: {
           specs: 'test/js/specs/**/*.spec.js',
           vendor: [
-            'node_modules/angular/angular.js',
-            'node_modules/angular-route/angular-route.js',
-            'node_modules/angular-mocks/angular-mocks.js'
+            'bower_components/angular/angular.js',
+            'bower_components/angular-route/angular-route.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
           ],
           summary: true,
           template: require('grunt-template-jasmine-istanbul'),
