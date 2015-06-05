@@ -5,11 +5,14 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+
+  var appSrc = 'app/assets/javascripts/**/*.js';
 
   grunt.initConfig({
     jasmine: {
       specsAndCoverage: {
-        src: 'public/javascripts/*.js',
+        src: appSrc,
         options: {
           specs: 'test/js/specs/**/*.spec.js',
           vendor: [
@@ -50,7 +53,16 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'public/javascripts/**/*.js', 'test/js/**/*.js']
+      all: ['Gruntfile.js', appSrc, 'test/js/**/*.js']
+    },
+    concat: {
+      options: {
+        banner: "'use strict';\n\n"
+      },
+      dist: {
+        src: appSrc,
+        dest: 'public/javascripts/main.js'
+      }
     }
   });
 
