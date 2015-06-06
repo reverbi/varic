@@ -3,7 +3,7 @@ scala:
   - 2.11.2
 jdk:
   - oraclejdk8
-install: "npm install -g grunt-cli"
+install: "npm install -g bower"
 script: "sbt ++$TRAVIS_SCALA_VERSION stage full-test"
 after_success: ./scripts/travis-after-success.sh
 env:
