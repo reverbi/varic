@@ -9,7 +9,7 @@
     "grunt-template-jasmine-istanbul": "^0.3.3"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install --silent"
   },
   "private": true
 }
