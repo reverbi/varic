@@ -1,4 +1,4 @@
-package controllers
+package com.github.reverbi.controllers
 
 import play.api._
 import play.api.mvc._

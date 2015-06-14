@@ -2,9 +2,15 @@ name := """varic"""
 
 version := "1.0-SNAPSHOT"
 
+organization := "com.github.reverbi"
+
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.2"
+
+javaOptions ++= Seq(
+  "-Djava.util.logging.config.file=conf/javalog.properties"
+)
 
 libraryDependencies ++= Seq(
   jdbc,
@@ -58,7 +64,7 @@ showSuccess := false
 herokuAppName in Compile := "varic"
 
 // Alias for running tests, coverage and style check
-addCommandAlias("fullTest", ";clean;npmInstall;scalastyle;test:scalastyle;coverage;test;coverageOff")
+addCommandAlias("fullTest", ";clean;npmInstall;scalastyle;test:scalastyle;coverage;test;coverageOff;test:grunt")
 
 // scoverage settings
 
